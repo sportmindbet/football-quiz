@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
+  <title>Football Quiz</title>
+</head>
+<body>
+
+<div id="main-menu" class="menu">
+  <button id="play-btn" class="menu-button" onclick="play1('main-play', 'play-btn')">ΠΑΙΞΕ</button>
+  <button class="menu-button">ΠΡΟΗΓΟΥ- MΕΝΑ QUIZ</button>
+  <button class="menu-button" onclick="location.href='game-rules.html'">ΚΑΝΟΝΕΣ ΠΑΙΧΝΙΔΟΥ</button>
+  <button class="menu-button" onclick="resetPage()">ΠΙΣΩ</button>
+</div>
+
+<div id="main-play" class="play-page">
+  <div class="play-head">
+      <div class="game-title">Football Quiz</div>
+      <div class="scoreboard">
+        <div class="player-1">
+          <div id="s1" class="score-1">ΠΑΙΚΤΗΣ 1: 0</div>
+        </div>
+        <div class="player-2">
+          <div id="s2" class="score-2">ΠΑΙΚΤΗΣ 2: 0</div>
+        </div>
+      </div>
+      <div id="turn" class="turn">ΠΑΙΖΕΙ Ο ΠΑΙΚΤΗΣ 1</div>
+  </div>
+    <div id="ctgrs" class="categories">
+      <div class="category-1">
+        <button class="category-button" onclick="play('cq1')">ΙΣΤΟΡΙΑ</button>
+      <div id="cq1" class="category-question-1">
+        <button id="b11" class="category-question" onclick="play('q11', 'b11')">x1</button>
+        <button id="b12" class="category-question" onclick="play('q12', 'b12')">x2</button>
+        <button id="b13" class="category-question" onclick="play('q13', 'b13')">x3</button>
+      </div>
+      </div>
+      <div class="category-2">
+        <button class="category-button" onclick="play('cq2')">ΓΕΩΓΡΑΦΙΑ</button>
+      <div id="cq2" class="category-question-2">
+        <button id="b21" class="category-question" onclick="play('q21', 'b21')">x1</button>
+        <button id="b22" class="category-question" onclick="play('q22', 'b22')">x2</button>
+        <button id="b23" class="category-question" onclick="play('q23', 'b23')">x3</button>
+      </div>
+      </div>
+      <div class="category-3">
+        <button class="category-button" onclick="play('cq3')">GOSSIP</button>
+      <div id="cq3" class="category-question-3">
+        <button id="b31" class="category-question" onclick="play('q31', 'b31')">x1</button>
+        <button id="b32" class="category-question" onclick="play('q32', 'b32')">x2</button>
+      </div>
+      </div>
+      <div class="category-4">
+        <button class="category-button" onclick="play('cq4')">PLAYER ID</button>
+      <div id="cq4" class="category-question-4">
+        <button id="b41" class="category-question" onclick="play('q41', 'b41')">x1</button>
+        <button id="b42" class="category-question" onclick="play('q42', 'b42')">x2</button>
+      </div>
+      </div>
+      <div class="category-5">
+        <button class="category-button" onclick="play('cq5')">FANS' QUESTIONS</button>
+      <div id="cq5" class="category-question-5">
+        <button id="b51" class="category-question" onclick="play('q51', 'b51')">x1</button>
+        <button id="b52" class="category-question" onclick="play('q52', 'b52')">x2</button>
+      </div>
+      </div>
+      <div class="category-6">
+        <button class="category-button" onclick="play('cq6')">LOGO QUIZ</button>
+      <div id="cq6" class="category-question-6">
+        <button id="b62" class="category-question" onclick="play('q62', 'b62')">x2</button>
+        <button id="b63" class="category-question" onclick="play('q63', 'b63')">x3</button>
+      </div>
+      </div>
+      <div class="category-7">
+        <button class="category-button" onclick="play('cq7')">TOP 5</button>
+      <div id="cq7" class="category-question-7">
+        <button id="b71" class="category-question" onclick="play('q71', 'b71')">x3</button>
+        <button id="b72" class="category-question" onclick="play('q72', 'b72')">x3</button>
+      </div>
+      </div>
+    </div>
+  <div class="qna">
+    <div id="q11" class="q1-1">
+      <div class="question">ΠΟΙΟΣ ΕΙΝΑΙ Ο ΠΡΩΤΟΣ ΣΚΟΡΕΡ ΟΛΩΝ ΤΩΝ ΕΠΟΧΩΝ ΤΗΣ JUVENTUS;</div>
+      <button id="h11" class="top5-answer" onclick="changeButtonText('A. Del Piero', 'h11')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+      <div class="answers">
+        <button id="a111" class="answer-1" onclick="correct('a111', 'a112', 'a112', 'nq11', 'a111', 0)">+0</button>
+        <button id="a112" class="answer-2" onclick="correct('a111', 'a112', 'a112', 'nq11', 'a112', 1)">+1</button>
+      </div>
+    <button id="nq11" class="next-question" onclick="next('q11')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q12" class="q1-2">
+      <div class="question">ΠΟΙΟΣ ΕΒΑΛΕ ΤΟ ΠΡΩΤΟ ΓΚΟΛ ΣΤΟ ΜΟΥΝΤΙΑΛ 2022;</div>
+      <button id="h12" class="top5-answer" onclick="changeButtonText('Enner Valencia', 'h12')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+      <div class="answers">
+        <button id="a121" class="answer-1" onclick="correct('a121', 'a122', 'a122', 'nq12', 'a121', 0)">+0</button>
+        <button id="a122" class="answer-2" onclick="correct('a121', 'a122', 'a122', 'nq12', 'a122', 2)">+2</button>
+      </div>
+    <button id="nq12" class="next-question" onclick="next('q12')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q13" class="q1-3">
+      <div class="question">ΠΟΙΟΣ ΕΙΧΕ ΤΙΣ ΠΕΡΙΣΣΟΤΕΡΕΣ ΑΣΣΙΣΤ ΣΤΟ ΜΟΥΝΤΙΑΛ 2014;</div>
+      <button id="h13" class="top5-answer" onclick="changeButtonText('Juan Cuardrado, 4', 'h13')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+      <div class="answers">
+        <button id="a131" class="answer-1" onclick="correct('a131', 'a132', 'a132', 'nq13', 'a131', 0)">+0</button>
+        <button id="a132" class="answer-2" onclick="correct('a131', 'a132', 'a132', 'nq13', 'a132', 3)">+3</button>
+      </div>
+    <button id="nq13" class="next-question" onclick="next('q13')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q21" class="q2-1">
+      <div class="question">ΠΩΣ ΛΕΓΕΤΑΙ ΤΟ ΓΗΠΕΔΟ ΤΗΣ ΕΒΕΡΤΟΝ;</div>
+      <button id="h21" class="top5-answer" onclick="changeButtonText('Goodison Park', 'h21')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+      <div class="answers">
+        <button id="a211" class="answer-1" onclick="correct('a211', 'a212', 'a212', 'nq21', 'a211', 0)">+0</button>
+        <button id="a212" class="answer-2" onclick="correct('a211', 'a212', 'a212', 'nq21', 'a212', 1)">+1</button>
+      </div>
+    <button id="nq21" class="next-question" onclick="next('q21')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q22" class="q2-2">
+      <div class="question">ΣΕ ΠΟΙΑ ΧΩΡΑ ΘΑ ΔΙΕΞΑΧΘΕΙ ΤΟ EURO 2024;</div>
+      <button id="h22" class="top5-answer" onclick="changeButtonText('Γερμανία', 'h22')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+      <div class="answers">
+        <button id="a221" class="answer-1" onclick="correct('a221', 'a222', 'a222', 'nq22', 'a221', 0)">+0</button>
+        <button id="a222" class="answer-2" onclick="correct('a221', 'a222', 'a222', 'nq22', 'a222', 2)">+2</button>
+      </div>
+    <button id="nq22" class="next-question" onclick="next('q22')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q23" class="q2-3">
+      <div class="question">ΑΠΟ ΠΟΙΑ ΧΩΡΑ ΕΙΝΑΙ Η ΟΜΑΔΑ 'Chaco For Ever';</div>
+      <button id="h23" class="top5-answer" onclick="changeButtonText('Αργεντινή', 'h23')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+      <div class="answers">
+        <button id="a231" class="answer-1" onclick="correct('a231', 'a232', 'a232', 'nq23', 'a231', 0)">+0</button>
+        <button id="a232" class="answer-2" onclick="correct('a231', 'a232', 'a232', 'nq23', 'a232', 3)">+3</button>
+      </div>
+    <button id="nq23" class="next-question" onclick="next('q23')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q31" class="q3-1">
+      <div class="question">ΠΟΣΑ ΠΑΙΔΙΑ ΕΧΕΙ Ο ΣΟΥΑΡΕΖ;</div>
+      <button id="h31" class="top5-answer" onclick="changeButtonText('3 Παιδιά', 'h31')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+      <div class="answers">
+        <button id="a311" class="answer-1" onclick="correct('a311', 'a312', 'a312', 'nq31', 'a311', 0)">+0</button>
+        <button id="a312" class="answer-2" onclick="correct('a311', 'a312', 'a312', 'nq31', 'a312', 1)">+1</button>
+      </div>
+    <button id="nq31" class="next-question" onclick="next('q31')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q32" class="q3-2">
+      <div class="question">ΠΟΙΟ ΤΥΧΕΡΟ ΠΑΙΧΝΙΔΙ ΠΑΙΖΕΙ ΣΥΧΝΑ Ο JAMES MADDISON;</div>
+      <button id="h32" class="top5-answer" onclick="changeButtonText('ΠΟΚΕΡ', 'h32')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+      <div class="answers">
+        <button id="a321" class="answer-1" onclick="correct('a321', 'a322', 'a322', 'nq32', 'a321', 0)">+0</button>
+        <button id="a322" class="answer-2" onclick="correct('a321', 'a322', 'a322', 'nq32', 'a322', 2)">+2</button>
+      </div>
+    <button id="nq32" class="next-question" onclick="next('q32')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q41" class="q4-1">
+      <div class="question">ΒΡΕΣ ΤΟΝ ΠΑΙΚΤΗ ΑΠΟ ΤΗΝ ΚΑΡΙΕΡΑ ΤΟΥ</div>
+      <img class="player-id-pic" src="images/guillerme-pid.jpg">
+      <button id="pid41" class="top5-answer" onclick="changeButtonText('Guilherme Torres', 'pid41')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+    <div class="answers">
+      <button id="a411" class="answer-1" onclick="correct('a411', 'a412', 'a412', 'nq41', 'a411', 0)">+0</button>
+      <button id="a412" class="answer-2" onclick="correct('a411', 'a412', 'a412', 'nq41', 'a412', 1)">+1</button>
+    </div>
+    <button id="nq41" class="next-question" onclick="next('q41')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q42" class="q4-2">
+      <div class="question">ΒΡΕΣ ΤΟΝ ΠΑΙΚΤΗ ΑΠΟ ΤΗΝ ΚΑΡΙΕΡΑ ΤΟΥ</div>
+      <img class="player-id-pic" src="images/sagna-pid.jpg">
+      <button id="pid42" class="top5-answer" onclick="changeButtonText('Bacary Sagna', 'pid42')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+    <div class="answers">
+      <button id="a421" class="answer-1" onclick="correct('a421', 'a422', 'a422', 'nq42', 'a421', 0)">+0</button>
+      <button id="a422" class="answer-2" onclick="correct('a421', 'a422', 'a422', 'nq42', 'a422', 2)">+2</button>
+    </div>
+    <button id="nq42" class="next-question" onclick="next('q42')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q51" class="q5-1">
+      <div class="question">ΠΟΙΑ ΟΜΑΔΑ ΚΕΡΔΙΣΕ ΤΗΝ ΠΡΩΤΗ PREMIER LEAGUE (92/93);</div>
+      <button id="h51" class="top5-answer" onclick="changeButtonText('Manchester United', 'h51')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+      <div class="answers">
+        <button id="a511" class="answer-1" onclick="correct('a511', 'a512', 'a512', 'nq51', 'a511', 0)">+0</button>
+        <button id="a512" class="answer-2" onclick="correct('a511', 'a512', 'a512', 'nq51', 'a512', 1)">+1</button>
+      </div>
+    <button id="nq51" class="next-question" onclick="next('q51')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q52" class="q5-2">
+      <div class="question">ΠΟΙΟΣ ΠΑΙΚΤΗΣ ΕΧΕΙ ΚΑΤΑΚΤΗΣΕΙ ΤΟ CHAMPIONS LEAGUE ΜΕ 3 ΟΜΑΔΕΣ;</div>
+      <button id="h52" class="top5-answer" onclick="changeButtonText('Clarence Seedorf', 'h52')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+      <div class="answers">
+        <button id="a521" class="answer-1" onclick="correct('a521', 'a522', 'a522', 'nq52', 'a521', 0)">+0</button>
+        <button id="a522" class="answer-2" onclick="correct('a521', 'a522', 'a522', 'nq52', 'a522', 2)">+2</button>
+      </div>
+    <button id="nq52" class="next-question" onclick="next('q52')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q62" class="q6-2">
+      <div class="question">ΒΡΕΣ ΤΗΝ ΟΜΑΔΑ</div>
+      <img class="logo-quiz-pic" src="images/huddersfield.jpg">
+      <button id="lq62" class="top5-answer" onclick="changeButtonText('Huddersfield Town', 'lq62')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+    <div class="answers">
+      <button id="a621" class="answer-1" onclick="correct('a621', 'a622', 'a622', 'nq62', 'a621', 0)">+0</button>
+      <button id="a622" class="answer-2" onclick="correct('a621', 'a622', 'a622', 'nq62', 'a622', 2)">+2</button>
+    </div>
+    <button id="nq62" class="next-question" onclick="next('q62')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q63" class="q6-3">
+      <div class="question">ΒΡΕΣ ΤΗΝ ΟΜΑΔΑ</div>
+      <img class="logo-quiz-pic" src="images/Metz.jpg">
+      <button id="lq63" class="top5-answer" onclick="changeButtonText('Metz FC', 'lq63')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ</button>
+    <div class="answers">
+      <button id="a631" class="answer-1" onclick="correct('a631', 'a632', 'a632', 'nq63', 'a631', 0)">+0</button>
+      <button id="a632" class="answer-2" onclick="correct('a631', 'a632', 'a632', 'nq63', 'a632', 3)">+3</button>
+    </div>
+    <button id="nq63" class="next-question" onclick="next('q63')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q71" class="q7-1">
+      <div class="question">TOP 5 SCORERS PREMIER LEAGUE 21/22</div>
+    <div class="answers">
+      <div class="top5">
+        <button id="t511" class="top5-answer" onclick="changeButtonText('M. Salah, 23', 't511')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ 1</button>
+        <button id="t512" class="top5-answer" onclick="changeButtonText('H. Son, 23', 't512')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ 2</button>
+        <button id="t513" class="top5-answer" onclick="changeButtonText('C. Ronaldo, 18', 't513')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ 3</button>
+        <button id="t514" class="top5-answer" onclick="changeButtonText('H. Kane, 17', 't514')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ 4</button>
+        <button id="t515" class="top5-answer" onclick="changeButtonText('S. Mane, 16', 't515')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ 5</button>
+      </div>
+      <button id="a711" class="answer-1" onclick="correct('a711', 'a712', 'a713', 'nq71', 'a711', 0)">+0</button>
+      <button id="a712" class="answer-2" onclick="correct('a711', 'a712', 'a713', 'nq71', 'a712', 2)">+2</button>
+      <button id="a713" class="answer-3" onclick="correct('a711', 'a712', 'a713', 'nq71', 'a713', 3)">+3</button>
+    </div>
+    <button id="nq71" class="next-question" onclick="next('q71')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+    <div id="q72" class="q7-2">
+      <div class="question">TOP 5 SCORERS SERIE A 21/22</div>
+    <div class="answers">
+      <div class="top5">
+        <button id="t521" class="top5-answer" onclick="changeButtonText('C. Immobile, 27', 't521')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ 1</button>
+        <button id="t522" class="top5-answer" onclick="changeButtonText('D. Vlahovic, 24', 't522')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ 2</button>
+        <button id="t523" class="top5-answer" onclick="changeButtonText('L. Martinez, 21', 't523')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ 3</button>
+        <button id="t524" class="top5-answer" onclick="changeButtonText('T. Abraham, 17', 't524')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ 4</button>
+        <button id="t525" class="top5-answer" onclick="changeButtonText('G. Simeone, 17', 't525')">ΕΜΦΑΝΙΣΕ ΑΠΑΝΤΗΣΗ 5</button>
+      </div>
+      <button id="a721" class="answer-1" onclick="correct('a721', 'a722', 'a723', 'nq72', 'a721', 0)">+0</button>
+      <button id="a722" class="answer-2" onclick="correct('a721', 'a722', 'a723', 'nq72', 'a722', 2)">+2</button>
+      <button id="a723" class="answer-3" onclick="correct('a721', 'a722', 'a723', 'nq72', 'a723', 3)">+3</button>
+    </div>
+    <button id="nq72" class="next-question" onclick="next('q72')">ΕΠΟΜΕΝΗ ΕΡΩΤΗΣΗ</button>
+    </div>
+</div>
+
+<div id="result" style="display:none;"></div>
+
+
+
+
+  
+</body>
+</html>
+  
