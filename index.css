@@ -61,6 +61,7 @@ body{
   align-items: center;
   position: fixed;
   top: 100px;
+  z-index: -1;
 }
 
 .game-title {
@@ -129,11 +130,7 @@ body{
   background-color: rgba(0,0,0,0.2);
 } 
 
-.scoreboard{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+
 
 .next-question{
   display: none;
